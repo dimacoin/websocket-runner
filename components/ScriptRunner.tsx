@@ -33,7 +33,7 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
 //     }
 //   }, [output]);
 
-useEffect(() => {
+//useEffect(() => {
     // Debug only - direct WebSocket connection for monitoring
     // if (websocketUrl) {
     //   console.log('Setting up debug WebSocket connection to:', websocketUrl);
@@ -69,7 +69,7 @@ useEffect(() => {
     //     console.error('Error setting up debug WebSocket:', error);
     //   }
     }
-  }, [websocketUrl, executionId]);
+  //}, [websocketUrl, executionId]);
   
   // Auto-scroll console to bottom when output changes
   useEffect(() => {
