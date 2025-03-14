@@ -15,7 +15,8 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
     output, 
     status, 
     inputPrompt, 
-    sendInput 
+    sendInput, 
+    clearOutput
   } = useWebSocket();
   
   const [scriptKey, setScriptKey] = useState('test_scripts/example_from_task_2.py');
@@ -88,6 +89,9 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
     // generate a UUID
     const newExecId = crypto.randomUUID();
     setExecutionId(newExecId);
+
+    // Clear the console output before starting new script
+    clearOutput();  // This line is new
 
     // First, establish WebSocket connection
     connect(websocketUrl, newExecId);

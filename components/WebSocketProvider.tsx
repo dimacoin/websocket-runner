@@ -21,6 +21,7 @@ interface WebSocketContextType {
   inputPrompt: string | null;
   messageHistory: WebSocketMessage[]; // Add message history to the context
   clearMessageHistory: () => void; // Add function to clear message history
+  clearOutput: () => void;
 }
 
 const WebSocketContext = createContext<WebSocketContextType | undefined>(undefined);
@@ -42,6 +43,15 @@ export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children 
 
   const clearMessageHistory = () => {
     setMessageHistory([]);
+  };
+
+
+  // Add function to clear output
+  const clearOutput = () => {
+    setOutput({
+      stdout: [],
+      stderr: []
+    });
   };
 
   const connect = (url: string, execId: string) => {
@@ -210,7 +220,8 @@ export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children 
         status,
         inputPrompt,
         messageHistory,
-        clearMessageHistory
+        clearMessageHistory,
+        clearOutput
       }}
     >
       {children}
