@@ -52,7 +52,7 @@ export default async function handler(
       success: true,
       message: `Script execution started with ID: ${response.MessageId}`,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error starting script execution:', error);
     return res.status(500).json({
       success: false,

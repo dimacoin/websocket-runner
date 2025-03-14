@@ -35,21 +35,21 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
 
 useEffect(() => {
     // Debug only - direct WebSocket connection for monitoring
-    if (websocketUrl) {
-      console.log('Setting up debug WebSocket connection to:', websocketUrl);
+    // if (websocketUrl) {
+    //   console.log('Setting up debug WebSocket connection to:', websocketUrl);
       
-      const wsDebugHandler = (event: any) => {
-        console.log('WebSocket event:', event.type, event);
-        if (event.type === 'message' && event.data) {
-          try {
-            const data = JSON.parse(event.data);
-            console.log('Parsed WebSocket message:', data);
-          } catch (error) {
-            console.log('Raw WebSocket message data:', event.data);
-            console.log(`Error: ${error}`);
-          }
-        }
-      };
+    //   const wsDebugHandler = (event: unknown) => {
+    //     console.log('WebSocket event:', event.type, event);
+    //     if (event.type === 'message' && event.data) {
+    //       try {
+    //         const data = JSON.parse(event.data);
+    //         console.log('Parsed WebSocket message:', data);
+    //       } catch (error) {
+    //         console.log('Raw WebSocket message data:', event.data);
+    //         console.log(`Error: ${error}`);
+    //       }
+    //     }
+    //   };
       
       // Create a separate WebSocket just for debugging
     //   try {
