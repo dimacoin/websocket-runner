@@ -54,9 +54,16 @@ export default async function handler(
     });
   } catch (error: unknown) {
     console.error('Error starting script execution:', error);
-    return res.status(500).json({
-      success: false,
-      error: error.message || 'An unknown error occurred',
-    });
+    let message = 'An unknown error occurred';
+
+  // If it's really an Error object, use its .message
+  if (error instanceof Error) {
+    message = error.message;
+  }
+
+  return res.status(500).json({
+    success: false,
+    error: message,
+  });
   }
 }
