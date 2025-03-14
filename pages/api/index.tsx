@@ -1,8 +1,8 @@
 // pages/index.tsx
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { WebSocketProvider } from '../components/WebSocketProvider';
-import ScriptRunner from '../components/ScriptRunner';
+import { WebSocketProvider } from '../../components/WebSocketProvider';
+import ScriptRunner from '../../components/ScriptRunner';
 
 export default function Home() {
   const [websocketUrl, setWebsocketUrl] = useState('');
