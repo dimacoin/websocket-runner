@@ -68,7 +68,7 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
     //   } catch (error) {
     //     console.error('Error setting up debug WebSocket:', error);
     //   }
-    }
+    //}
   //}, [websocketUrl, executionId]);
   
   // Auto-scroll console to bottom when output changes
