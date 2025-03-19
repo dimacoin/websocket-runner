@@ -110,7 +110,8 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
             websocket_url: websocketUrl,
             client_id: 'frontend-client'
           },
-          execution_id: newExecId
+          execution_id: newExecId,
+          jwtToken: 'jwt3213211232312436512436151433241'
         }),
       });
       
