@@ -114,6 +114,8 @@ const ScriptRunner: React.FC<ScriptRunnerProps> = ({ websocketUrl }) => {
           jwtToken: 'jwt3213211232312436512436151433241'
         }),
       });
+
+      console.log('Sent message to SQSResponse:', response);
       
       const result = await response.json();
       
