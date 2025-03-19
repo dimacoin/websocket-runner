@@ -17,7 +17,7 @@ export default async function handler(
   }
 
   try {
-    const { s3_key, output_destination, output_config, execution_id } = req.body;
+    const { s3_key, output_destination, output_config, execution_id, jwtToken } = req.body;
 
     if (!s3_key) {
       return res.status(400).json({ success: false, error: 'Missing s3_key parameter' });
@@ -37,7 +37,8 @@ export default async function handler(
       s3_key,
       output_destination: output_destination || 'websocket',
       output_config: output_config || {},
-      execution_id: execution_id
+      execution_id: execution_id,
+      jwtToken: jwtToken
     });
 
     // Send the message to SQS
